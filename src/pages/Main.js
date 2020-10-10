@@ -4,13 +4,14 @@ import ListItem from "./components/ListItem";
 
 export default function Main() {
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getImages = async () => {
-      const res = await fetch("https://picsum.photos/v2/list").then((res) =>
-        res.json()
-      );
-      setImages(res);
+      const res = await fetch("https://picsum.photos/v2/list");
+      const list = await res.json();
+      setImages(list);
+      setLoading(false);
     };
     getImages();
   }, []);
@@ -29,7 +30,13 @@ export default function Main() {
   );
 
   return (
-    <div className="flex justify-center max-h-screen p-10">
+    <div className="flex justify-center h-screen p-10">
+      {loading ? (
+        <div className="flex items-center">
+          <span className="text-xl font-thin">Loading...</span>
+        </div>
+      ) : (
+        <React.Fragment>
       <Split
         className="w-3/4 border overflow-y-auto flex"
         sizes={[50, 50]}
@@ -55,6 +62,8 @@ export default function Main() {
         {panel}
         {panel}
       </Split>
+        </React.Fragment>
+      )}
     </div>
   );
 }

@@ -1773,7 +1773,6 @@ video {
 
 .appearance-none {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
 }
 
@@ -13737,7 +13736,6 @@ video {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -18941,30 +18939,33 @@ video {
   .sm\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 640px) and (min-width: 640px) {
     .sm\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 640px) and (min-width: 768px) {
     .sm\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 640px) and (min-width: 1024px) {
     .sm\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 640px) and (min-width: 1280px) {
     .sm\:container {
       max-width: 1280px;
     }
   }
+
+@media (min-width: 640px) {
 
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -20134,7 +20135,6 @@ video {
 
   .sm\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -32098,7 +32098,6 @@ video {
   }
 
   .sm\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -37272,30 +37271,33 @@ video {
   .md\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 768px) and (min-width: 640px) {
     .md\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) and (min-width: 768px) {
     .md\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 768px) and (min-width: 1024px) {
     .md\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 768px) and (min-width: 1280px) {
     .md\:container {
       max-width: 1280px;
     }
   }
+
+@media (min-width: 768px) {
 
   .md\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -38465,7 +38467,6 @@ video {
 
   .md\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -50429,7 +50430,6 @@ video {
   }
 
   .md\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -55603,30 +55603,33 @@ video {
   .lg\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 1024px) and (min-width: 640px) {
     .lg\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 1024px) and (min-width: 768px) {
     .lg\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) and (min-width: 1024px) {
     .lg\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 1024px) and (min-width: 1280px) {
     .lg\:container {
       max-width: 1280px;
     }
   }
+
+@media (min-width: 1024px) {
 
   .lg\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -56796,7 +56799,6 @@ video {
 
   .lg\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -68760,7 +68762,6 @@ video {
   }
 
   .lg\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -73934,30 +73935,33 @@ video {
   .xl\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 1280px) and (min-width: 640px) {
     .xl\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 1280px) and (min-width: 768px) {
     .xl\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 1280px) and (min-width: 1024px) {
     .xl\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 1280px) and (min-width: 1280px) {
     .xl\:container {
       max-width: 1280px;
     }
   }
+
+@media (min-width: 1280px) {
 
   .xl\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -75127,7 +75131,6 @@ video {
 
   .xl\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
   }
 
@@ -87091,7 +87094,6 @@ video {
   }
 
   .xl\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
