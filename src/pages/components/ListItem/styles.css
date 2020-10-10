@@ -1,0 +1,31 @@
+.SM > .panel .item-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.SM > .panel .item-container > .photo-container {
+  margin-right: 0;
+  margin-bottom: 1.5rem;
+}
+
+.SM > .panel .item-container > .description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.MD > .panel .item-container {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.MD > .panel .item-container > .photo-container {
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+.MD > .panel .item-container > .description-container {
+  align-items: flex-start;
+  text-align: start;
+}

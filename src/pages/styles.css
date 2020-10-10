@@ -1,0 +1,8 @@
+.SM > .panel {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MD > .panel {
+  display: block;
+}

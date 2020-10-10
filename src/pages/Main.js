@@ -1,6 +1,61 @@
 import React, { useEffect, useState } from "react";
 import Split from "react-split";
+import ResponsiveContainer from "components/ResponsiveContainer";
 import ListItem from "./components/ListItem";
+import "./styles.css";
+
+const gutterFn = (_index, direction, _pairElement) => {
+  const gutter = document.createElement("div");
+  gutter.className = `
+            gutter
+            gutter-${direction}
+            flex
+            items-center
+            justify-center
+            cursor-col-resize
+          `;
+  const gutterRule = document.createElement("div");
+  gutterRule.className = `
+            w-5
+            h-full
+            absolute
+            flex
+            items-center
+            justify-center
+          `;
+  const gutterCenter = document.createElement("div");
+  gutterCenter.className = "h-full bg-gray-300";
+  gutterCenter.style = "width: 1px;";
+  gutterRule.appendChild(gutterCenter);
+  const gutterDragContainer = document.createElement("div");
+  gutterDragContainer.className = `
+            w-full
+            flex
+            items-center
+            justify-center
+            absolute
+            border-4
+            border-white
+          `;
+  const gutterDrag = document.createElement("div");
+  gutterDrag.className = `
+            w-full
+            h-8
+            border-l-2
+            border-r-2
+            flex
+            items-center
+            justify-center
+            bg-white
+          `;
+  const gutterDragCenter = document.createElement("div");
+  gutterDragCenter.className = "w-1/4 h-full bg-gray-300";
+  gutterDrag.appendChild(gutterDragCenter);
+  gutterDragContainer.appendChild(gutterDrag);
+  gutterRule.appendChild(gutterDragContainer);
+  gutter.appendChild(gutterRule);
+  return gutter;
+};
 
 export default function Main() {
   const [images, setImages] = useState([]);
@@ -17,16 +72,21 @@ export default function Main() {
   }, []);
 
   const panel = (
-    <div>
-      {images.map((img, i) => (
-        <ListItem
-          key={i}
-          imgSrc={img.download_url}
-          title={img.author}
-          dimensions={{ width: img.width, height: img.height }}
-        />
-      ))}
-    </div>
+    <ResponsiveContainer
+      className="overflow-y-auto"
+      breakpoints={{ SM: 0, MD: 384 }}
+    >
+      <div className="panel">
+        {images.map((img, i) => (
+          <ListItem
+            key={i}
+            imgSrc={img.download_url}
+            title={img.author}
+            dimensions={{ width: img.width, height: img.height }}
+          />
+        ))}
+      </div>
+    </ResponsiveContainer>
   );
 
   return (
@@ -37,31 +97,16 @@ export default function Main() {
         </div>
       ) : (
         <React.Fragment>
-      <Split
-        className="w-3/4 border overflow-y-auto flex"
-        sizes={[50, 50]}
-        gutter={(index, direction, pairElement) => {
-          const gutter = document.createElement("div");
-          gutter.className = `
-            gutter
-            gutter-${direction}
-            flex
-            items-center
-            justify-center
-            border-l
-            border-r
-            cursor-col-resize
-          `;
-          const gutterDot = document.createElement("div");
-          gutterDot.className = "w-2 h-2 rounded-full bg-gray-300"
-          gutter.appendChild(gutterDot)
-          return gutter;
-        }}
-        gutterSize={12}
-      >
-        {panel}
-        {panel}
-      </Split>
+          <Split
+            className="w-3/4 border flex relative"
+            sizes={[50, 50]}
+            minSize={150}
+            gutter={gutterFn}
+            gutterSize={1}
+          >
+            {panel}
+            {panel}
+          </Split>
         </React.Fragment>
       )}
     </div>
