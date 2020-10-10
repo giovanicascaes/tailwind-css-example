@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.css";
 
 export default function ListItem({
   imgSrc,
@@ -7,15 +6,15 @@ export default function ListItem({
   dimensions: { width, height },
 }) {
   return (
-    <div className="flex bg-white p-6 border-b item-container flex-1">
-      <div className="w-24 border shadow photo-container">
+    <div className="flex bg-white p-6 border-b">
+      <div className="border shadow mr-6">
         <img
-          className="h-24 w-full border-4 border-white mx-0"
+          className="h-24 w-24 border-4 border-white"
           src={imgSrc}
           alt="thumb"
         />
       </div>
-      <div className="text-left description-container">
+      <div className="text-left">
         <h2 className="text-lg font-thin">{title}</h2>
         <div className="text-sm text-purple-500">
           {width} / {height} px
