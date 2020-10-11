@@ -22,8 +22,8 @@ export default function Main() {
           <span className="text-xl font-thin">Loading...</span>
         </div>
       ) : (
-        <div className="w-3/4 border flex flex-col overflow-y-auto">
-          <div>
+        <div className="w-3/4 border overflow-y-auto">
+          <div className="flex flex-wrap md:block">
             {images.map((img, i) => (
               <ListItem
                 key={i}
