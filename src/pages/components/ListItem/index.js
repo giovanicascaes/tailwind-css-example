@@ -62,18 +62,19 @@ export default function ListItem({
           transition
           duration-200
           ease-in-out
+          hover:bg-opacity-75
           ${
             selected
               ? `bg-opacity-75
                 text-opacity-100
                 cursor-pointer
                 text-shadow-xl
-                bg-green-500`
-              : `hover:bg-opacity-75
-              hover:text-opacity-100
+                bg-indigo-500
+                hover:bg-indigo-700`
+              : `hover:text-opacity-100
               hover:cursor-pointer
-              hover:text-shadow-xl
-              bg-blue-500`
+              hover:text-shadow-2xl
+              bg-purple-500`
           }
         `}
         >
@@ -91,7 +92,7 @@ export default function ListItem({
           <span className="font-semibold">px</span>
         </div>
         <div className="mt-2">
-          <a className="btn-link" href={imgSrc}>
+          <a className="btn-outline" href={imgSrc}>
             View
           </a>
         </div>
