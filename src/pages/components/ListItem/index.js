@@ -4,28 +4,11 @@ export default function ListItem({
   imgSrc,
   title,
   dimensions: { width, height },
+  onSelect,
+  selected,
 }) {
-  const photo = useRef(null);
-  const photoOverlay = useRef(null);
-
   function select() {
-    photo.current.classList.add("transition");
-    photo.current.classList.add("duration-200");
-    photo.current.classList.add("ease-in-out");
-    photo.current.classList.add("transform");
-    photo.current.classList.add("-translate-y-1");
-    photo.current.classList.add("scale-125");
-    photoOverlay.current.classList.remove("hover:bg-opacity-75");
-    photoOverlay.current.classList.remove("hover:text-opacity-100");
-    photoOverlay.current.classList.remove("hover:cursor-pointer");
-    photoOverlay.current.classList.remove("hover:text-shadow-xl");
-    photoOverlay.current.classList.add("bg-opacity-75");
-    photoOverlay.current.classList.add("text-opacity-100");
-    photoOverlay.current.classList.add("cursor-pointer");
-    photoOverlay.current.classList.add("text-shadow-xl");
-    photoOverlay.current.classList.remove("bg-blue-500");
-    photoOverlay.current.classList.add("bg-green-500");
-    photoOverlay.current.innerHTML = "Selected";
+    onSelect(imgSrc);
   }
 
   return (
@@ -43,8 +26,17 @@ export default function ListItem({
       `}
     >
       <div
-        className="w-24 border shadow mb-6 md:mb-0 md:mr-6 relative"
-        ref={photo}
+        className={`
+          w-24
+          border
+          shadow
+          mb-6
+          md:mb-0
+          md:mr-6
+          relative
+          transition
+          duration-200
+          ease-in-out${selected ? " transform -translate-y-1 scale-125" : ""}`}
         onClick={select}
       >
         <img
@@ -58,7 +50,6 @@ export default function ListItem({
           top-0
           w-full
           h-full
-          bg-blue-500
           bg-opacity-0
           text-opacity-0
           flex
@@ -68,17 +59,25 @@ export default function ListItem({
           text-white
           font-bold
           uppercase
-          hover:bg-opacity-75
-          hover:text-opacity-100
-          hover:cursor-pointer
-          hover:text-shadow-xl
           transition
           duration-200
           ease-in-out
+          ${
+            selected
+              ? `bg-opacity-75
+                text-opacity-100
+                cursor-pointer
+                text-shadow-xl
+                bg-green-500`
+              : `hover:bg-opacity-75
+              hover:text-opacity-100
+              hover:cursor-pointer
+              hover:text-shadow-xl
+              bg-blue-500`
+          }
         `}
-          ref={photoOverlay}
         >
-          Select
+          {selected ? "Selected" : "Select"}
         </div>
       </div>
       <div className="items-center text-center md:items-start md:text-left">

@@ -3,6 +3,7 @@ import ListItem from "./components/ListItem";
 
 export default function Main() {
   const [images, setImages] = useState([]);
+  const [selected, setSelected] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,6 +15,18 @@ export default function Main() {
     };
     getImages();
   }, []);
+
+  function isSelected(imgSrc) {
+    return selected.some((s) => s === imgSrc);
+  }
+
+  function select(imgSrc) {
+    if (isSelected(imgSrc)) {
+      setSelected((s) => s.filter((f) => f !== imgSrc));
+    } else {
+      setSelected((s) => [...s, imgSrc]);
+    }
+  }
 
   return (
     <div className="flex justify-center h-screen p-10">
@@ -30,6 +43,8 @@ export default function Main() {
                 imgSrc={img.download_url}
                 title={img.author}
                 dimensions={{ width: img.width, height: img.height }}
+                onSelect={select}
+                selected={isSelected(img.download_url)}
               />
             ))}
           </div>
