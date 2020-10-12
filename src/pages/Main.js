@@ -35,7 +35,7 @@ export default function Main() {
           <span className="text-xl font-thin">Loading...</span>
         </div>
       ) : (
-        <div className="w-3/4 border overflow-y-auto">
+        <div className="w-1/2 border overflow-y-auto">
           <div className="flex flex-wrap lg:block">
             {images.map((img, i) => (
               <ListItem
