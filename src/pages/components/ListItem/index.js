@@ -20,9 +20,9 @@ export default function ListItem({
         bg-white
         p-6
         items-center
-        md:flex-row
-        md:border-b
-        md:items-start
+        lg:flex-row
+        lg:border-b
+        lg:items-start
       `}
     >
       <div
@@ -31,8 +31,8 @@ export default function ListItem({
           border
           shadow
           mb-6
-          md:mb-0
-          md:mr-6
+          lg:mb-0
+          lg:mr-6
           relative
           transition
           duration-200
@@ -80,9 +80,9 @@ export default function ListItem({
           {selected ? "Selected" : "Select"}
         </div>
       </div>
-      <div className="text-center md:text-left">
+      <div className="text-center lg:text-left">
         <h2 className="text-lg font-thin">{title}</h2>
-        <div className="text-sm text-purple-500 flex justify-center md:justify-start">
+        <div className="text-sm text-purple-500 flex justify-center lg:justify-start">
           <span>{width}</span>
           <span className="font-semibold">px</span>&nbsp;
           <span className="text-xs">&nbsp;/&nbsp;</span>

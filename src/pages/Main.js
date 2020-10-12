@@ -36,7 +36,7 @@ export default function Main() {
         </div>
       ) : (
         <div className="w-3/4 border overflow-y-auto">
-          <div className="flex flex-wrap md:block">
+          <div className="flex flex-wrap lg:block">
             {images.map((img, i) => (
               <ListItem
                 key={i}
