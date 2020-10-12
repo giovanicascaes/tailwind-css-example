@@ -80,9 +80,9 @@ export default function ListItem({
           {selected ? "Selected" : "Select"}
         </div>
       </div>
-      <div className="items-center text-center md:items-start md:text-left">
+      <div className="text-center md:text-left">
         <h2 className="text-lg font-thin">{title}</h2>
-        <div className="text-sm text-purple-500 flex items-center">
+        <div className="text-sm text-purple-500 flex justify-center md:justify-start">
           <span>{width}</span>
           <span className="font-semibold">px</span>&nbsp;
           <span className="text-xs">&nbsp;/&nbsp;</span>
