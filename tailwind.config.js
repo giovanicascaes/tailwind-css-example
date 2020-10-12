@@ -11,4 +11,7 @@ module.exports = {
       },
     },
   },
+  variants: {
+    cursor: ({ after }) => after(["hover"]),
+  },
 };

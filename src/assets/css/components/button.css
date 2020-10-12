@@ -1,0 +1,8 @@
+@layer components {
+  .btn-link {
+    @apply font-semibold text-xs text-blue-500 uppercase;
+  }
+  .btn-link:hover {
+    @apply text-blue-600;
+  }
+}
