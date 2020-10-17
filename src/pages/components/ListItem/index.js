@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 export default function ListItem({
   imgSrc,
@@ -69,8 +69,8 @@ export default function ListItem({
                 text-opacity-100
                 cursor-pointer
                 text-shadow-xl
-                bg-indigo-500
-                hover:bg-indigo-700`
+                bg-purple-600
+                hover:bg-purple-700`
               : `hover:text-opacity-100
               hover:cursor-pointer
               hover:text-shadow-2xl
@@ -83,7 +83,7 @@ export default function ListItem({
       </div>
       <div className="text-center lg:text-left">
         <h2 className="text-lg font-thin">{title}</h2>
-        <div className="text-sm text-purple-500 flex justify-center lg:justify-start">
+        <div className="text-sm text-purple-500 flex items-center justify-center lg:justify-start">
           <span>{width}</span>
           <span className="font-semibold">px</span>&nbsp;
           <span className="text-xs">&nbsp;/&nbsp;</span>
